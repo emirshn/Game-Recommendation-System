@@ -52,7 +52,11 @@ It provides personalized recommendations based on games the user selects, with f
 - Use Advanced Options to improve precision. 
 - Apply filters to avoid noisy or overly broad recommendations.
 - Click game cards to view large images and explanations.
-  
+---
+---
+## Demo
+- [Basic Usage Demo](https://streamable.com/k9qqgx)
+- [Advanced Settings Demo](https://streamable.com/juue9f)
 ---
 ## How Training and Recommendations Work ?
 1. Data Processing
