@@ -37,13 +37,13 @@ It provides personalized recommendations based on games the user selects, with f
 - Next if you created a new dataset you need: game_embeddings.npy, game_idx_to_similars.pkl, game_idx_to_similars.pth, tag_vocab.pkl files which can be generated from model_generator.py using:
   " python model_generator.py train " command. Or you can unzip model_files.zip and put them into backend folder if you used given dataset from [repo](https://github.com/emirshn/IGDB-Database-Fetcher).
 - For running frontend:
-- cd frontend
-- npm install
-- npm run dev
+  - cd frontend
+  - npm install
+  - npm run dev
 - For running backend:
-- install libraries with pip
-- cd backend
-- uvicorn backend:app --reload
+  - install libraries with pip
+  - cd backend
+  - uvicorn backend:app --reload
 - Update any API URLs inside your frontend code to match your backend's running port (e.g., http://localhost:5000 or 127.0.0.1:8000)
 ---
 
@@ -75,14 +75,14 @@ It provides personalized recommendations based on games the user selects, with f
 
 6. Game Recommendation
 - Given one or more game IDs, the system:
-- Embeds input games using their vector representations.
-- Computes cosine similarity between input and all games.
+  - Embeds input games using their vector representations.
+  - Computes cosine similarity between input and all games.
 - Applies tiered bonuses for games that:
-- Are listed as "similar games" in the input.
-- Are shared similar games between multiple inputs.
-- Are close in the embedding space.
+  - Are listed as "similar games" in the input.
+  - Are shared similar games between multiple inputs.
+  - Are close in the embedding space.
 - Applies user-defined filters:
-- Include/Exclude by genres, themes, keywords, platforms
-- Exclude games released before a given year.
-- Returns top K recommended games with similarity scores.
+  - Include/Exclude by genres, themes, keywords, platforms
+  - Exclude games released before a given year.
+  - Returns top K recommended games with similarity scores.
 
