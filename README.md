@@ -25,7 +25,7 @@ It provides personalized recommendations based on games the user selects, with f
 - │ ├── backend # API server (FastAPI)
 - │ ├── model_generator # Used for training models and generating embedding files for future use without effecting actual app
 - │ ├── model_utils # Same as generator but it is used by backend.py for calculating recommendations from existing embedded files
-- │ └── database as csv and db files are also stored here with output of model generator (game_embeddings, tag_vocab etc.)
+- │ └── database - CSV and DB files are also stored here along with output of model generator (game_embeddings, tag_vocab etc.)
 - ├── frontend/
 - │ ├── public/ 
 - │ ├── components/ # Components are used for clean code
@@ -33,9 +33,9 @@ It provides personalized recommendations based on games the user selects, with f
 - │ └── main.js 
 ---
 ## Setup
-- For using this app first you need a game_dataset.csv and games.db (db version of csv file). Because of upload problems i didnt include these to project directly (you can still unzip game_dataset and gamesdb files in backend folder) but you can also generate yours using code in this [repo](https://github.com/emirshn/IGDB-Database-Fetcher) depending on your preferences (for example i didnt include games under 50 user score and ports etc.)
-- Next if you created a new dataset you need: game_embeddings.npy, game_idx_to_similars.pkl, game_idx_to_similars.pth, tag_vocab.pkl files which can be generated from model_generator.py using:
-  " python model_generator.py train " command. Or you can unzip model_files.zip and put them into backend folder if you used given dataset from [repo](https://github.com/emirshn/IGDB-Database-Fetcher).
+- To use this app, first you need a game_dataset.csv and games.db (DB version of the CSV file). Because of upload limitations, I didn't include these in the project directly (you can still unzip the game_dataset and gamesdb files in the backend folder), but you can also generate your own using code in this [repo](https://github.com/emirshn/IGDB-Database-Fetcher) depending on your preferences (for example, I didn’t include games under 50 user score and ports, etc.)
+- Next, if you created a new dataset, you need: game_embeddings.npy, game_idx_to_similars.pkl, game_idx_to_similars.pth, tag_vocab.pkl — these can be generated from model_generator.py using:
+  " python model_generator.py train " Or you can unzip model_files.zip and put them into the backend folder if you used the given dataset from the [repo](https://github.com/emirshn/IGDB-Database-Fetcher).
 - For running frontend:
   - cd frontend
   - npm install
@@ -46,14 +46,17 @@ It provides personalized recommendations based on games the user selects, with f
   - uvicorn backend:app --reload
 - Update any API URLs inside your frontend code to match your backend's running port (e.g., http://localhost:5000 or 127.0.0.1:8000)
 ---
-
 ## Usage Tips
-- Pick 1 to 3 favorite games.
+- Pick 1 to 3 games.
 - Use Advanced Options to improve precision. 
 - Apply filters to avoid noisy or overly broad recommendations.
 - Click game cards to view large images and explanations.
-  
 ---
+## Demo Videos
+- [Basic Usage Demo](https://streamable.com/k9qqgx)
+- [Advanced Settings Demo](https://streamable.com/juue9f)
+---
+
 ## How Training and Recommendations Work ?
 1. Data Processing
 -The system loads a dataset (game_dataset.csv) containing structured tags like: genres, themes, keywords, game_modes, player_perspectives, and similar_games.
@@ -85,4 +88,24 @@ It provides personalized recommendations based on games the user selects, with f
   - Include/Exclude by genres, themes, keywords, platforms
   - Exclude games released before a given year.
   - Returns top K recommended games with similarity scores.
+---
+## Future Work
+- Better UI (Dark mode etc.)
+- Faster recommendations
+- Better user interaction (better filter and options)
+- Save list
+- Sharable link
+  
+## Screenshots
+### Game Selection
+<img width="734" height="451" alt="image" src="https://github.com/user-attachments/assets/04ea3b61-958d-4132-b9e4-08c8db4c58e5" />
+
+### Advanced Settings
+<img width="673" height="591" alt="image" src="https://github.com/user-attachments/assets/d36dcc6b-0b22-4e6c-a68d-072f3454d4f6" />
+
+### Filter and Game List
+<img width="705" height="692" alt="image" src="https://github.com/user-attachments/assets/fd80c0ee-8740-41f3-894f-92d03e920d5f" />
+
+### Detailed View
+<img width="649" height="733" alt="image" src="https://github.com/user-attachments/assets/0d3e8607-3048-4010-85c2-487c57daf1fe" />
 
