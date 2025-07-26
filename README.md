@@ -33,17 +33,17 @@ It provides personalized recommendations based on games the user selects, with f
 - │ └── main.js 
 ---
 ## Setup
-- For using this app first you need a game_dataset.csv and games.db (db version of csv file). Because of upload problems i didnt include these to project but you can generate yours using code in this [repo](https://github.com/emirshn/IGDB-Database-Fetcher) depending on your preferences (for example i didnt include games under 50 user score and ports etc.)
+- For using this app first you need a game_dataset.csv and games.db (db version of csv file). Because of upload problems i didnt include these to project directly (you can still unzip game_dataset and gamesdb files in backend folder) but you can also generate yours using code in this [repo](https://github.com/emirshn/IGDB-Database-Fetcher) depending on your preferences (for example i didnt include games under 50 user score and ports etc.)
 - Next if you created a new dataset you need: game_embeddings.npy, game_idx_to_similars.pkl, game_idx_to_similars.pth, tag_vocab.pkl files which can be generated from model_generator.py using:
   " python model_generator.py train " command. Or you can unzip model_files.zip and put them into backend folder if you used given dataset from [repo](https://github.com/emirshn/IGDB-Database-Fetcher).
 - For running frontend:
--- cd frontend
--- npm install
--- npm run dev
+- cd frontend
+- npm install
+- npm run dev
 - For running backend:
--- install libraries with pip
--- cd backend
--- uvicorn backend:app --reload
+- install libraries with pip
+- cd backend
+- uvicorn backend:app --reload
 - Update any API URLs inside your frontend code to match your backend's running port (e.g., http://localhost:5000 or 127.0.0.1:8000)
 ---
 
