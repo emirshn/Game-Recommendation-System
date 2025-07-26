@@ -59,7 +59,7 @@ It provides personalized recommendations based on games the user selects, with f
 
 ## How Training and Recommendations Work ?
 1. Data Processing
--The system loads a dataset (game_dataset.csv) containing structured tags like: genres, themes, keywords, game_modes, player_perspectives, and similar_games.
+- The system loads a dataset (game_dataset.csv) containing structured tags like: genres, themes, keywords, game_modes, player_perspectives, and similar_games.
 
 3. Vocabulary Building
 - For each tag type (e.g., genres), a unique vocabulary is built. Tags are mapped to unique indices to create input features for the model.
